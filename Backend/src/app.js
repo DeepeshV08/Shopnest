@@ -3,7 +3,10 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 // Router import 
 import authRouter from './routes/authRoutes.js'
-
+import  productRouter  from './routes/productRoutes.js'
+import orderRouter from './routes/orderRoutes.js'
+import paymentRouter from './routes/paymentRoutes.js'
+import analyticsRouter from './routes/analyticsRoutes.js'
 // Create an instance of express
 const app = express()
 
@@ -14,6 +17,11 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
 // routes
 app.use('/api/auth' , authRouter)
+app.use('/api/products' , productRouter)
+app.use('/api/orders', orderRouter)
+app.use('/api/payment' , paymentRouter)
+app.use('/api/analytics' , analyticsRouter)
+
 app.get('/' ,(req,res) => {
     res.send("Helllooo world")
 })

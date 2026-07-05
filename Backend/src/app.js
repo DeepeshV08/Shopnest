@@ -29,5 +29,9 @@ app.use('/api/analytics' , analyticsRouter)
 app.get('/' ,(req,res) => {
     res.send("Helllooo world")
 })
+app.use(express.static("/public"))
+app.use("*name", (req, res) => {
+    res.sendFile(path.join(__dirname,"..","/public/index/html"))
+});
 
 export default app

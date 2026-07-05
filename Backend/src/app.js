@@ -1,12 +1,18 @@
 import express, { urlencoded } from 'express'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import path from 'path'
+import { fileURLToPath } from 'url'
 // Router import 
 import authRouter from './routes/authRoutes.js'
 import  productRouter  from './routes/productRoutes.js'
 import orderRouter from './routes/orderRoutes.js'
 import paymentRouter from './routes/paymentRoutes.js'
 import analyticsRouter from './routes/analyticsRoutes.js'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 // Create an instance of express
 const app = express()
 
@@ -30,6 +36,7 @@ app.get('/' ,(req,res) => {
     res.send("Helllooo world")
 })
 app.use(express.static("/public"))
+
 app.use("*name", (req, res) => {
     res.sendFile(path.join(__dirname,"..","/public/index.html"))
 });

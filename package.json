@@ -1,0 +1,33 @@
+{
+  "name": "shopnest",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "full",
+    "stack",
+    "project"
+  ],
+  "homepage": "https://github.com/DeepeshV08/Shopnest#readme",
+  "bugs": {
+    "url": "https://github.com/DeepeshV08/Shopnest/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeepeshV08/Shopnest.git"
+  },
+  "license": "ISC",
+  "author": "Deepesh Verma",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "install": "cd Backend && npm install && cd ../Frontend && npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "cd Backend && npm run dev",
+    "dev:client": "cd Frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build": "cd Frontend && npm run build"
+  },
+  "dependencies": {
+    "concurrently": "^10.0.3"
+  }
+}
